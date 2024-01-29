@@ -1,0 +1,62 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name" style="font-family: Montserrat;">{{username}}</h1>
+    <div class="profile-btn" [matMenuTriggerFor]="profileMenu">
+      <img src="assets/profile.jpg" class="img-avatar" alt="" onerror="this.src='assets/profile.jpg'">
+    </div>
+    <mat-menu #profileMenu="matMenu">
+      <div class="profile-menu">
+        <img src="assets/profile.jpg" class="img-avatar" alt="" onerror="this.src='assets/profile.jpg'">
+        <h4 class="bold" style="margin-top: 15px;">Edwin Dev</h4>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'">
+      <mat-nav-list>
+        <span *ngFor="let item of menu">
+          <span *ngIf="item.children && item.children.length > 0">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+                      <mat-icon>{{item.iconName}}</mat-icon>
+                      <p style="font-family: Montserrat;">{{item.displayName}}</p>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <span *ngFor="let child of item.children">
+                  <mat-list-item [routerLink]="child.route">
+                    <div fxLayout="row" fxLayoutGap="10px">
+                      <mat-icon>{{child.iconName}}</mat-icon>
+                      <p style="font-family: Montserrat;">{{item.displayName}}</p>
+                    </div>
+                  </mat-list-item>
+                </span>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </span>
+          <span *ngIf="!item.children || item.children.length === 0">
+            <mat-list-item [routerLink]="item.route">
+              <div fxLayout="row">
+                <mat-icon>{{item.iconName}}</mat-icon>
+                <p style="font-family: Montserrat;">{{item.displayName}}</p>
+              </div>
+            </mat-list-item>
+          </span>
+        </span>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="background-color: #eeeeee !important; padding: 25px; ">
+      <router-outlet>
+      </router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
