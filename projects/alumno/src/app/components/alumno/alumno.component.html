@@ -1,3 +1,36 @@
-<p>
-  alumno works!
-</p>
+<div style="display: flex;flex-direction: row;justify-content: space-between; align-items: center;margin-bottom: 20px;">
+  <div style="display: flex;flex-direction: row;justify-content: flex-start;align-items: flex-start;">
+    <h1>Alumnos</h1>
+  </div>
+  <button mat-flat-button color="primary" (click)="createEditAlumn()">Crear</button>
+</div>
+
+<mat-table [dataSource]="dataSource">
+  <!-- Definir las columnas aquí -->
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef>Nombre del alumno</mat-header-cell>
+    <mat-cell *matCellDef="let alumno">{{ alumno.nombre }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="curso">
+    <mat-header-cell *matHeaderCellDef>Curso</mat-header-cell>
+    <mat-cell *matCellDef="let alumno">{{ alumno.curso }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+    <mat-cell *matCellDef="let alumno">
+      <button mat-icon-button (click)="createEditAlumn(alumno)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="createEditAlumn(alumno.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>

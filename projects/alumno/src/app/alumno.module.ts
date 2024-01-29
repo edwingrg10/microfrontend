@@ -5,10 +5,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { AlumnoCrearEditarComponent } from './components/alumno/alumno-crear-editar/alumno-crear-editar.component';
+import { AlumnoComponent } from './components/alumno/alumno.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlumnoComponent,
+    AlumnoCrearEditarComponent
   ],
   imports: [
     CommonModule,

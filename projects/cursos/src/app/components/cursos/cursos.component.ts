@@ -26,13 +26,10 @@ export class CursosComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    // Ejemplo de escuchar un evento
     this.dataSource.data = this.cursos;
     this.dataSource.paginator = this.paginator;
-
     this.comunicacionService.cursoActualizado.subscribe((data: any) => {
       console.log('Curso actualizado:', data);
-      // Puedes realizar acciones en respuesta al evento
     });
   }
 
