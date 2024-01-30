@@ -1,4 +1,29 @@
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 @import url("@fontsource/montserrat");
 @import url("@fontsource/montserrat/400.css");
 @import url("@fontsource/montserrat/400-italic.css");
+
+.mat-table {
+    width: 100%;
+    margin-top: 1.5em;
+    font-family: Montserrat;
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    font-family: Montserrat;
+}
+
+.mat-h1,
+.mat-headline,
+.mat-typography .mat-h1,
+.mat-typography .mat-headline,
+.mat-typography h1 {
+    font-family: Montserrat;
+}
+
+.mat-paginator {
+    font-family: Montserrat;
+}
