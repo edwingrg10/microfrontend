@@ -17,7 +17,7 @@ export class AlumnoComponent implements OnInit {
 
   alumns = [
     { id: 1, nombre: 'Martha G', curso: 'Español' },
-    { id: 2, nombre: 'Carlos G', curso: 'Matematicas' },
+    { id: 2, nombre: 'Carlos G', curso: 'Matemáticas' },
   ];
   constructor(
     private comunicacionService: ComunicacionService,

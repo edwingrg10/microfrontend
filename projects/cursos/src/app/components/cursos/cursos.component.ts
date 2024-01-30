@@ -12,14 +12,13 @@ import { CursoCrearEditarComponent } from './curso-crear-editar/curso-crear-edit
 })
 export class CursosComponent implements OnInit {
 
-  dataSource = new MatTableDataSource<any>(); // Asegúrate de especificar el tipo correcto para tus cursos
+  dataSource = new MatTableDataSource<any>();
   displayedColumns: string[] = ['nombre', 'profesor', 'acciones'];
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
   cursos = [
     { id: 1, nombre: 'Español', profesor: 'Edwin Garzón' },
-    { id: 2, nombre: 'Matematicas', profesor: 'Andrea Manrique' },
-    // Agrega más datos según sea necesario
+    { id: 2, nombre: 'Matemáticas', profesor: 'Andrea Manrique' },
   ];
   constructor(
     private comunicacionService: ComunicacionService,
@@ -40,7 +39,6 @@ export class CursosComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      // Lógica para manejar el resultado después de cerrar la modal de editar
     });
   }
 }
