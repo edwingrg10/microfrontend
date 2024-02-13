@@ -25,7 +25,8 @@
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+                    <div
+                      style="display: flex;flex-direction: row;justify-content: space-between;align-items: flex-start;">
                       <mat-icon>{{item.iconName}}</mat-icon>
                       <p style="font-family: Montserrat;">{{item.displayName}}</p>
                     </div>
@@ -33,7 +34,7 @@
                 </mat-expansion-panel-header>
                 <span *ngFor="let child of item.children">
                   <mat-list-item [routerLink]="child.route">
-                    <div fxLayout="row" fxLayoutGap="10px">
+                    <div style="display: flex;flex-direction: row;gap: 10px;">
                       <mat-icon>{{child.iconName}}</mat-icon>
                       <p style="font-family: Montserrat;">{{item.displayName}}</p>
                     </div>
@@ -44,7 +45,7 @@
           </span>
           <span *ngIf="!item.children || item.children.length === 0">
             <mat-list-item [routerLink]="item.route">
-              <div fxLayout="row">
+              <div style="display: flex;flex-direction: row;">
                 <mat-icon>{{item.iconName}}</mat-icon>
                 <p style="font-family: Montserrat;">{{item.displayName}}</p>
               </div>
