@@ -39,18 +39,20 @@ table {
 .profile-menu {
     text-align: center;
     width: 200px;
-    .img-avatar {
-        width: 80px !important;
-        height: 80px !important;
-        border-radius: 40px !important;
-    }
-    h4.bold {
-        font-weight: bold;
-        font-family: Montserrat;
-    }
-    button {
-        margin: 10px 5px 10px 0;
-    }
+}
+
+.img-avatar {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 40px !important;
+}
+
+h4.bold {
+    font-weight: bold;
+    font-family: Montserrat;
+}
+button {
+    margin: 10px 5px 10px 0;
 }
 
 .profile-btn {
@@ -58,10 +60,6 @@ table {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    .img-avatar {
-        height: 100%;
-        border-radius: 20px;
-    }
 }
 
 .row {
